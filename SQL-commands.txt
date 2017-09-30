@@ -1,0 +1,93 @@
+
+
+1. Find all the robots from Star Wars.
+
+
+intro_to_sql=# SELECT * FROM robots WHERE source = 'Star Wars'                                       ;
+ name |  source   | personality | id 
+------+-----------+-------------+----
+ C3PO | Star Wars | anxious     |  4
+ R2D2 | Star Wars | loyal       |  8
+(2 rows)
+
+_______________________________________________________________
+
+2. Find the robot with an "anxious" personality.
+
+
+intro_to_sql=# SELECT * FROM robots WHERE personality = 'anxious'                                    ;
+ name |  source   | personality | id 
+------+-----------+-------------+----
+ C3PO | Star Wars | anxious     |  4
+(1 row)
+
+_______________________________________________________________
+3. Find all recipes that are nut free.
+
+intro_to_sql=# SELECT name FROM recipes  WHERE nut_free = true                                       ;
+                   name                    
+-------------------------------------------
+ Butternut Squash Bake
+ Vegetarian Bibimbap
+ French Veggie Loaf
+ Quinoa and Black Beans
+ Juicy Roasted Chicken
+ Garlic Green Beans
+ Stout Slow Cooker Corned Beef and Veggies
+(7 rows)
+
+_______________________________________________________________
+4. Count the number of recipes that are gluten free but not vegetarian.
+
+intro_to_sql=# SELECT COUNT(name) FROM recipes  WHERE gluten_free = true AND vegetarian = false;
+ count 
+-------
+     2
+(1 row)
+
+_______________________________________________________________
+5. Find the animal with the most legs.
+
+intro_to_sql=# SELECT name, number_of_legs FROM animals ORDER BY number_of_legs DESC;
+       name       | number_of_legs 
+------------------+----------------
+ octopus          |              8
+ sheep            |              4
+ cat              |              4
+ cow              |              4
+ bat              |              2
+ duck             |              2
+ owl              |              2
+ chicken          |              2
+ whale            |              0
+ hammerhead shark |              0
+(10 rows)
+
+_______________________________________________________________
+6. Find the board game that takes the least amount of time to play.
+
+intro_to_sql=# SELECT MIN(mins_to_play)  FROM board_games;
+ min 
+-----
+  15
+(1 row)
+
+_______________________________________________________________
+7. Find the recipe that takes the most time to prepare.
+
+_______________________________________________________________
+8. Find all the robots whose name starts with the letter M.
+
+_______________________________________________________________
+9. Count the number of board games that can be played by 8 people.
+
+_______________________________________________________________
+10. Find all animals that are swimming and egg-laying.
+
+_______________________________________________________________
+11. Find all animals that are swimming and egg-laying but not flying.
+
+_______________________________________________________________
+12. Find the board game that supports the largest number of people.
+
+
